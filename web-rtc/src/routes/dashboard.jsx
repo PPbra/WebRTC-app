@@ -1,7 +1,7 @@
 import Dashboard from "views/Dashboard/Dashboard";
 import UserProfile from "views/UserProfile/UserProfile";
-import TableList from "views/TableList/TableList";
-import Typography from "views/Typography/Typography";
+import ChatRoom from "views/ChatRoom/ChatRoom";
+import VideoConference from "views/VideoConference/VideoConference";
 // import Icons from "views/Icons/Icons";
 // import Maps from "views/Maps/Maps";
 // import Notifications from "views/Notifications/Notifications";
@@ -23,13 +23,13 @@ const dashboardRoutes = [
     path: "/table",
     name: "Chat room",
     icon: "pe-7s-chat",
-    component: TableList
+    component: ChatRoom
   },
   {
     path: "/typography",
     name: "Live Video Conference",
     icon: "pe-7s-video",
-    component: Typography
+    component: VideoConference
   },
   { redirect: true, path: "/", to: "/dashboard", name: "Dashboard" }
 ];
