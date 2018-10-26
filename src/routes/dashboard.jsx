@@ -1,4 +1,4 @@
-import Dashboard from "views/Dashboard/Dashboard";
+// import Dashboard from "views/Dashboard/Dashboard";
 import UserProfile from "views/UserProfile/UserProfile";
 import ChatRoom from "views/ChatRoom/ChatRoom";
 // import VideoConference from "views/VideoConference/VideoConference";

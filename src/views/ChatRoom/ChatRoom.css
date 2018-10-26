@@ -29,11 +29,11 @@
 }
 
 .chat-list-users{
-    max-height: 370px;
+    max-height: 300px;
     overflow: scroll;
 }
 
 .chat-video-container{
     display: flex;
-    flex-direction: row
+    flex-direction: row;
 }
