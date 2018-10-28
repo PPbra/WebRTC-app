@@ -29,11 +29,50 @@
 }
 
 .chat-list-users{
-    max-height: 300px;
-    overflow: scroll;
+    max-height: 55vh;
+    overflow-y: scroll;
+}
+
+.chat-list-users::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+    border-radius: 2px;
+} 
+
+.chat-list-users::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 2px;
+
+}
+
+.chat-list-users::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 2px;
+
 }
 
 .chat-video-container{
     display: flex;
     flex-direction: row;
+}
+
+#message-container{
+    overflow-y: scroll;
+    max-height: 75vh;
+    height:75vh;
+}
+
+#message-container::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+} 
+
+#message-container::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+#message-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
 }

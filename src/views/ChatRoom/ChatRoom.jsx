@@ -8,33 +8,17 @@ import {
   Image,
   Grid
 } from "react-bootstrap";
-// import { Player, ReplayControl, TimeDivider, PlaybackRateMenuButton, VolumeMenuButton } from 'video-react';
 
-// import Card from "components/Card/Card.jsx"; import { thArray, tdArray } from
-// "variables/Variables.jsx";
 import './ChatRoom.css';
-// import ForwardControl from "video-react/lib/components/control-bar/ForwardControl";
-// import CurrentTimeDisplay from "video-react/lib/components/time-controls/CurrentTimeDisplay";
-// import ControlBar from "video-react/lib/components/control-bar/ControlBar";
+
 import 'react-chat-elements/dist/main.css';
 import {
-  MessageBox,
-  ChatItem,
-  ChatList,
-  SystemMessage,
   MessageList,
   Input,
   Button,
-  Avatar,
-  Navbar,
-  SideBar,
   Dropdown,
-  Popup,
 } from 'react-chat-elements';
 
-import FaSearch from 'react-icons/lib/fa/search';
-import FaComments from 'react-icons/lib/fa/comments';
-import FaClose from 'react-icons/lib/fa/close';
 import FaMenu from 'react-icons/lib/md/more-vert';
 
 
@@ -167,6 +151,8 @@ class ChatRoom extends Component {
           ),
           dateString: moment(new Date()).format('HH:mm'),
         };
+      default:
+        break;
     }
   }
 
@@ -189,28 +175,24 @@ class ChatRoom extends Component {
             <Col md="9">
               <div
                 className='right-panel'
-                style={{
-                  "overflow": "scroll",
-                  "max-height": "400px",
-                  "height":"400px",
-                  "position":"relative"
-                }}
               >
-                <MessageList
+                <div 
+                  id="message-container"
+                >
+                  <MessageList
                   className='message-list'
                   lockable={true}
                   downButtonBadge={10}
-                  dataSource={this.state.messageList} />
+                  dataSource={this.state.messageList} 
+                  />
+                </div>
+                
                 <Input
                   placeholder="Type message"
                   defaultValue=""
                   ref='input'
                   multiline={true}
-                  style={{
-                    "position":"absolute",
-                    "bottom":"0"
-                  }}
-                  // buttonsFloat='left'
+                  buttonsFloat='left'
                   onKeyPress={(e) => {
                     if (e.shiftKey && e.charCode === 13) {
                       return true;
@@ -239,13 +221,13 @@ class ChatRoom extends Component {
                       <div className="user-pic-profile">
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
-                      <div className="user-name">username 1</div>
+                      <div className="user-name">Group 1</div>
                       <i class="fas fa-phone user-action-call"></i>
                       <div
                         className="user-is-online"
                         style={{
-                          "color": "green "
-                        }}>online</div>
+                          "color": "green"
+                        }}>Calling</div>
                     </div>
                   </ListGroupItem>
                   <ListGroupItem>
@@ -253,13 +235,12 @@ class ChatRoom extends Component {
                       <div className="user-pic-profile">
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
-                      <div className="user-name">username 2</div>
+                      <div className="user-name">Group 1</div>
                       <i class="fas fa-phone user-action-call"></i>
                       <div
-                        className="user-is-online"
                         style={{
-                          "color": "green "
-                        }}>online</div>
+                          "color": "red"
+                        }}>offline</div>
                     </div>
                   </ListGroupItem>
                   <ListGroupItem>
@@ -267,13 +248,13 @@ class ChatRoom extends Component {
                       <div className="user-pic-profile">
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
-                      <div className="user-name">username 3</div>
+                      <div className="user-name">Group 1</div>
                       <i class="fas fa-phone user-action-call"></i>
                       <div
                         className="user-is-online"
                         style={{
-                          "color": "green "
-                        }}>online</div>
+                          "color": "red"
+                        }}>offline</div>
                     </div>
                   </ListGroupItem>
                   <ListGroupItem>
@@ -281,13 +262,13 @@ class ChatRoom extends Component {
                       <div className="user-pic-profile">
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
-                      <div className="user-name">username 4</div>
+                      <div className="user-name">Group 1</div>
                       <i class="fas fa-phone user-action-call"></i>
                       <div
                         className="user-is-online"
                         style={{
-                          "color": "green "
-                        }}>online</div>
+                          "color": "green"
+                        }}>Calling</div>
                     </div>
                   </ListGroupItem>
                   <ListGroupItem>
@@ -295,13 +276,13 @@ class ChatRoom extends Component {
                       <div className="user-pic-profile">
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
-                      <div className="user-name">username 5</div>
+                      <div className="user-name">Group 1</div>
                       <i class="fas fa-phone user-action-call"></i>
                       <div
                         className="user-is-online"
                         style={{
-                          "color": "green "
-                        }}>online</div>
+                          "color": "green"
+                        }}>Calling</div>
                     </div>
                   </ListGroupItem>
                   <ListGroupItem>
@@ -309,13 +290,13 @@ class ChatRoom extends Component {
                       <div className="user-pic-profile">
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
-                      <div className="user-name">username 6</div>
+                      <div className="user-name">Group 1</div>
                       <i class="fas fa-phone user-action-call"></i>
                       <div
                         className="user-is-online"
                         style={{
-                          "color": "green "
-                        }}>online</div>
+                          "color": "red"
+                        }}>offline</div>
                     </div>
                   </ListGroupItem>
                   <ListGroupItem>
@@ -323,57 +304,16 @@ class ChatRoom extends Component {
                       <div className="user-pic-profile">
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
-                      <div className="user-name">username 7</div>
+                      <div className="user-name">Group 1</div>
                       <i class="fas fa-phone user-action-call"></i>
                       <div
                         className="user-is-online"
                         style={{
-                          "color": "green "
-                        }}>online</div>
+                          "color": "green"
+                        }}>Calling</div>
                     </div>
                   </ListGroupItem>
-                  <ListGroupItem>
-                    <div className="chatroom-card-user">
-                      <div className="user-pic-profile">
-                        <Image src="https://picsum.photos/40/40" circle />
-                      </div>
-                      <div className="user-name">username 8</div>
-                      <i class="fas fa-phone user-action-call"></i>
-                      <div
-                        className="user-is-online"
-                        style={{
-                          "color": "green "
-                        }}>online</div>
-                    </div>
-                  </ListGroupItem>
-                  <ListGroupItem>
-                    <div className="chatroom-card-user">
-                      <div className="user-pic-profile">
-                        <Image src="https://picsum.photos/40/40" circle />
-                      </div>
-                      <div className="user-name">username 9</div>
-                      <i class="fas fa-phone user-action-call"></i>
-                      <div
-                        className="user-is-online"
-                        style={{
-                          "color": "green "
-                        }}>online</div>
-                    </div>
-                  </ListGroupItem>
-                  <ListGroupItem>
-                    <div className="chatroom-card-user">
-                      <div className="user-pic-profile">
-                        <Image src="https://picsum.photos/40/40" circle />
-                      </div>
-                      <div className="user-name">username 10</div>
-                      <i class="fas fa-phone user-action-call"></i>
-                      <div
-                        className="user-is-online"
-                        style={{
-                          "color": "green "
-                        }}>online</div>
-                    </div>
-                  </ListGroupItem>
+                  
                 </ListGroup>
                 <Panel.Body>Some more panel content here.</Panel.Body>
               </Panel>
