@@ -204,10 +204,17 @@ class ChatRoom extends Component {
                       return false;
                     }
                   }}
+                  leftButtons={
+                    <Button
+                    color='white'
+                    backgroundColor='green'
+                    text='Call'/>
+                  }
                   rightButtons={
                     <Button
                       text='Send'
                       onClick={this.addMessage.bind(this)} />
+                      
                   } />
               </div>
             </Col>
@@ -222,7 +229,7 @@ class ChatRoom extends Component {
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
                       <div className="user-name">Group 1</div>
-                      <i class="fas fa-phone user-action-call"></i>
+                      <i class="fas fa-plus-circle"></i>
                       <div
                         className="user-is-online"
                         style={{
@@ -236,7 +243,7 @@ class ChatRoom extends Component {
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
                       <div className="user-name">Group 1</div>
-                      <i class="fas fa-phone user-action-call"></i>
+                     <i class="fas fa-plus-circle"></i>
                       <div
                         style={{
                           "color": "red"
@@ -249,7 +256,7 @@ class ChatRoom extends Component {
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
                       <div className="user-name">Group 1</div>
-                      <i class="fas fa-phone user-action-call"></i>
+                     <i class="fas fa-plus-circle"></i>
                       <div
                         className="user-is-online"
                         style={{
@@ -263,7 +270,7 @@ class ChatRoom extends Component {
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
                       <div className="user-name">Group 1</div>
-                      <i class="fas fa-phone user-action-call"></i>
+                     <i class="fas fa-plus-circle"></i>
                       <div
                         className="user-is-online"
                         style={{
@@ -277,7 +284,7 @@ class ChatRoom extends Component {
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
                       <div className="user-name">Group 1</div>
-                      <i class="fas fa-phone user-action-call"></i>
+                     <i class="fas fa-plus-circle"></i>
                       <div
                         className="user-is-online"
                         style={{
@@ -291,7 +298,7 @@ class ChatRoom extends Component {
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
                       <div className="user-name">Group 1</div>
-                      <i class="fas fa-phone user-action-call"></i>
+                     <i class="fas fa-plus-circle"></i>
                       <div
                         className="user-is-online"
                         style={{
@@ -305,7 +312,7 @@ class ChatRoom extends Component {
                         <Image src="https://picsum.photos/40/40" circle />
                       </div>
                       <div className="user-name">Group 1</div>
-                      <i class="fas fa-phone user-action-call"></i>
+                     <i class="fas fa-plus-circle"></i>
                       <div
                         className="user-is-online"
                         style={{
