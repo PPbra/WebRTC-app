@@ -16,7 +16,7 @@ class MessageContainer extends Component {
     constructor(props) {
         super(props);
 
-        socket.onRecieveMessage((data) => {
+        socket.onReceiveMessage((data) => {
             this._addMessage(data, 'left')
         })
 
