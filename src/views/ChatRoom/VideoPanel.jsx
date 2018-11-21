@@ -1,11 +1,51 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal-resizable-draggable';
-
+ 
+import * as ws from '../../videoConferenceSocket';
 
 class VideoPanel extends Component {
 
+  constructor(props) {
+    super(props);
+
+    ws.onNewUserJoin((res)=>{
+      const {videoURLs} = this.state;
+      videoURLs.add(res);
+      this.setState(...this.state);
+    })
+
+    this.state = {
+      videoURLs: [
+        {
+          username: "user 1",
+          url: ""
+        },
+        {
+          username: "user 2",
+          url: ""
+        }
+      ]
+    }
+  }
   _closeModal = () => {
     this.props.onCloseModal()
+  }
+
+  _renderVideo = () => {
+    const { videoURLs } = this.state;
+    return videoURLs.map(e => {
+      return (
+        <video
+          controls
+          autoPlay
+          src={e.url}
+          style={{
+            "max-height": "200px"
+          }}
+        >
+        </video>
+      )
+    })
   }
 
   render() {
@@ -16,12 +56,15 @@ class VideoPanel extends Component {
         <div >
           <video
             controls
-            src="https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4"
+            autoPlay
             style={{
               "max-height": "200px"
             }}
-            >
-            </video>
+          >
+          </video>
+          {
+            this._renderVideo()
+          }
         </div>
         <button
           onClick={this._closeModal}
